@@ -1,0 +1,26 @@
+public class MermaidPrincess extends Object implements Mermaid, Princess {
+
+	@Override
+	public void speak() {
+		System.out.println("Princess.speak()의 구현[재정의]");
+	}
+
+	@Override
+	public void think() {
+		System.out.println("Princess.think()의 구현[재정의]");
+		
+	}
+
+	@Override
+	public void liveSea() {
+		System.out.println("Mermaid.liveSea()의 구현[재정의]");
+		
+	}
+
+	@Override
+	public void fastswin() {
+		System.out.println("Mermaid.fastswim()의 구현[재정의]");
+		
+	}
+
+}
