@@ -1,4 +1,4 @@
-//day2
+//day2 d
 
 //분수의 덧셈
 
@@ -19,3 +19,5 @@ class Solution9 {
         return answer;
     }
 }
+
+

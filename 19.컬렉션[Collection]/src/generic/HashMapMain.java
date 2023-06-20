@@ -9,6 +9,7 @@ public class HashMapMain {
 
 	public static void main(String[] args) {
 		
+		
 		HashMap<String,Car> carMap=new HashMap<String,Car>();
 		
 		System.out.println("#map size:"+carMap.size());
