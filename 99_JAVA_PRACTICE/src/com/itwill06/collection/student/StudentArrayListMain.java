@@ -19,11 +19,17 @@ public class StudentArrayListMain {
 		/*
 		 * 0.학생두명추가
 		 */
+		studentList.set(studentList.size()-1,new Student(10,"WOO",99,98,90));
+		studentList.set(studentList.size()-1,new Student(10,"HAN",88,69,47));
 		
 		/*
 		 * 1. 전체학생총점,평균,평점계산
 		 */
 		System.out.println("1. 전체학생총점,평균,평점계산");
+		Student.headerPrint();
+		for (Student student : studentList) {
+			student.print();
+		}
 		/*
 		 * 2. 전체학생 총점으로 석차계산
 		 */
