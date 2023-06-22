@@ -144,12 +144,6 @@ public class StudentArrayListMain {
 		 * 10. 학생총점으로 오름차순정렬
 		 */
 		System.out.println("10. 학생총점으로 내림차순정렬");
-		for (int i = 0; i < studentList.size(); i++) {
-			for (int j = 0; j < studentList.size()-1; j++) {
-				Student tempStudent = studentList.get(i);
-				tempStudent.getTot();
-			}
-		}
 		/*
 		  11. 학생이름순으로 오름차순정렬
 		 */
