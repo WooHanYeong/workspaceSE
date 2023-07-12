@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class DataCalendarMain {
+public class DateCalendarMain {
 
 	public static void main(String[] args) throws Exception{
 		long currentTime = System.currentTimeMillis();
@@ -73,9 +73,49 @@ public class DataCalendarMain {
 		System.out.println("---------- Calendar-->Date ------------");
 		Calendar cal2 = Calendar.getInstance();
 		cal2.set(2021, Calendar.JANUARY, 10, 13, 59, 59);
+		
 		Date date2 = cal2.getTime();
 		System.out.println("Date date2-->"+date2);
 		
+		System.out.println("------Date객체메쏘드-------");
+		Date date3 = new SimpleDateFormat("yyyy-MM-dd").parse("2023-01-03");
+		Date date4 = new SimpleDateFormat("yyyy-MM-dd").parse("2023-01-03");
+		Date date5 = new SimpleDateFormat("yyyy-MM-dd").parse("2023-01-15");
+		
+		System.out.println("date3.equals(date4) : "+ date3.equals(date4));
+		System.out.println("date4.equals(date5) : "+ date4.equals(date5));
+		System.out.println("date3.compareTo : " + date3.compareTo(date4));
+		System.out.println("date4.compareTo : " + date4.compareTo(date5));
+		System.out.println("date5.compareTo : " + date5.compareTo(date4));
+		
+		long gapMiliSec = date5.getTime()-date4.getTime();
+		System.out.println("gapMiliSec : "+gapMiliSec);
+		System.out.println("sec : "+gapMiliSec/1000);
+		System.out.println("min : "+gapMiliSec/1000/60);
+		System.out.println("hour : "+gapMiliSec/1000/60/60);
+		System.out.println("day : "+gapMiliSec/1000/60/60/24);
+		
+		System.out.println("-------------java.util.date --> java.sql.date------------");
+		java.util.Date utilDate1 = new java.util.Date();
+		java.util.Date utilDate2 = new java.util.Date(System.currentTimeMillis());
+		
+		java.sql.Date sqlDate1 =new java.sql.Date(utilDate1.getTime());
+		java.sql.Date sqlDate2 =new java.sql.Date(utilDate2.getTime());
+		System.out.println(sqlDate1);
+		System.out.println(sqlDate2);
+		
+		
+		System.out.println("-------------java.sql.date --> java.util.date------------");
+		java.sql.Date sqlDate3 = new java.sql.Date(System.currentTimeMillis());
+		java.sql.Date sqlDate4 = new java.sql.Date(new SimpleDateFormat("yyyy/MM/dd").parse("2000/05/05").getTime());
+		System.out.println(sqlDate3);
+		System.out.println(sqlDate4);
+		
+		
+		java.util.Date utilDate3 = sqlDate3;
+		java.util.Date utilDate4 = sqlDate4;
+		System.out.println(utilDate3);
+		System.out.println(utilDate4);
 		
 		
 		
@@ -84,6 +124,7 @@ public class DataCalendarMain {
 	}
 
 }
+
 
 
 
