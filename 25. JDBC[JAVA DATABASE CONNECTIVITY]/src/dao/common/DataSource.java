@@ -1,4 +1,4 @@
-package dao.address;
+package dao.common;
 /*
  * 데이타베이스 설정정보를 이용해서
  * Connection을 생성하고 해지하는 역할을 하는 클래스
