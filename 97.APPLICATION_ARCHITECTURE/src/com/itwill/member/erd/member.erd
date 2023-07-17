@@ -113,7 +113,7 @@
           <primaryKey>false</primaryKey>
           <description></description>
           <autoIncrement>false</autoIncrement>
-          <defaultValue>&apos;M&apos;</defaultValue>
+          <defaultValue>&apos;F&apos;</defaultValue>
         </net.java.amateras.db.visual.model.ColumnModel>
         <net.java.amateras.db.visual.model.ColumnModel>
           <columnName>member_regdate</columnName>

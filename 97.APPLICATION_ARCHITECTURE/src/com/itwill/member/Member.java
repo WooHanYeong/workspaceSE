@@ -1,3 +1,5 @@
+//dto
+
 package com.itwill.member;
 /*
 VO(Value Object),DTO(Data Transfer Object)
@@ -17,7 +19,7 @@ M_MARRIED           CHAR(1)
 M_REGDATE           DATE     
  */
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Member {
 	private String memberId;

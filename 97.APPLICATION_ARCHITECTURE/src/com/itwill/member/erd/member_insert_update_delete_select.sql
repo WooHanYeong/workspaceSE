@@ -1,13 +1,13 @@
---member table  CRUD sql
+--ebook table  CRUD sql
 
 --insert
 
-insert into member(member_id,member_password,member_name,member_address,member_age,member_married,member_regdate)
-                values('aaaa','aaaa','김경수','부산시 영도구',37,'F',sysdate);
-insert into member(member_id,member_password,member_name,member_address,member_age,member_married,member_regdate)
-                values('bbbb','bbbb','김경우','서울시 도봉구',23,'F',sysdate);
-insert into member(member_id,member_password,member_name,member_address,member_age,member_married,member_regdate)
-                values('cccc','cccc','김경미','서울시  강남구',47,'T',sysdate);
+insert into ebook(ebook_id,ebook_name,ebook_age,ebook_regdate)
+                values('aaaa','김경수',37,sysdate);
+insert into ebook(ebook_id,ebook_name,ebook_age,ebook_regdate)
+                values('bbbb','김경우',23,sysdate);
+insert into ebook(ebook_id,ebook_name,ebook_age,ebook_regdate)
+                values('cccc','김경미',47,sysdate);
                 
 --update pk
 
