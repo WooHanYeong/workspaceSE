@@ -11,7 +11,7 @@ USERINFO 테이블에 사용자를 추가,삭제,검색,수정등의 작업을�
 */
 public class UserDao {
 	private DataSource dataSource;
-	public UserDao() {
+	public UserDao() throws Exception{
 		dataSource=new DataSource();
 	}
 	/*

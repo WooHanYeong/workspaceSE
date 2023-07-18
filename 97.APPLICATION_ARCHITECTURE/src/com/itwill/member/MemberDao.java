@@ -75,6 +75,7 @@ public class MemberDao {
 		}
 		return findMember;
 	}
+	
 	public ArrayList<Member> findAll() throws Exception{
 		Connection con = dataSource.getConnection();
 		PreparedStatement pstmt=con.prepareStatement(MemberSQL.MEMBER_SELECT_ALL);

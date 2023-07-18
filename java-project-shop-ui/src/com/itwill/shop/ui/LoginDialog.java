@@ -1,29 +1,24 @@
 package com.itwill.shop.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import com.itwill.shop.user.User;
-import com.itwill.shop.user.UserService;
-
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
 import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import java.awt.Toolkit;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class LoginDialog extends JDialog {
 	/**********1.UserService객체멤버필드로선언*******/
-	private UserService userService;
 	/************************************************/
 	
 	/*****LoginDailog객체는 ShopMainFrame객체의참조변수를 멤버변수로가져야한다.*******/
@@ -94,40 +89,21 @@ public class LoginDialog extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						/********로그인버튼클릭시*********/
 						//1.입력유효성체크
-						String userid = userIdTextField.getText();
-						String password=userPasswordField.getText();
-						if(userid.equals("")) {
-							loginMessageLabel.setText("아이디를 입력하세요.");
-							userIdTextField.requestFocus();
-							return;
-						}
-						if(password.equals("")) {
-							loginMessageLabel.setText("패쓰워드를 입력하세요.");
-							userPasswordField.requestFocus();
-							return;
-						}
+						
 						//2.UserService.login 메쏘드호출
 						/***********2.UserService.login 메쏘드호출**************/
 						try {
-							
-							int result = userService.login(userid, password);
-							if(result==1) {
 								/*
 								 * 로그인성공
 								 *  - 성공한아이디로 User정보얻기
 								 *  - ShopMainFrame에 User객체 넘겨주기(ShopMainFrame객체의 메소드호출시 인자로 넘겨주기)
 								 *  - 로그인창닫기
 								 */
-								User loginUser = userService.findUser(userid);
-								shopMainFrame.loginProcess(loginUser);
-								dispose();
-							}else if(result==0) {
-								//로그인실패
-								loginMessageLabel.setText("아이디또는비밀번호가 일치하지않습니다.");
-								userIdTextField.requestFocus();
-								userIdTextField.setSelectionStart(0);
-								userIdTextField.setSelectionEnd(userid.length());
-							}
+					
+								/*
+								 * 로그인실패
+								 */
+					
 						}catch (Exception ex) {
 							ex.printStackTrace();
 						}
@@ -149,7 +125,7 @@ public class LoginDialog extends JDialog {
 			}
 		}
 		/**********2.UserService객체생성초기화*******/
-		userService=new UserService();
+		
 		/********************************************/
 	}//end constructor
 }//end class

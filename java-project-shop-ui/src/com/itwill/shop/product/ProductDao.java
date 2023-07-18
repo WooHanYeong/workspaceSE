@@ -13,7 +13,7 @@ PRODUCT 테이블에 제품 검색 등의 작업을한다.
 */
 public class ProductDao {
 	private DataSource dataSource;
-	public ProductDao() {
+	public ProductDao() throws Exception {
 		dataSource=new DataSource();
 	}
 	/*
