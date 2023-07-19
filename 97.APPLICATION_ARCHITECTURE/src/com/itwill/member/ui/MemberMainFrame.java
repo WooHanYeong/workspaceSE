@@ -181,6 +181,11 @@ public class MemberMainFrame extends JFrame {
 		memberLoginPanel.add(loginIdLabel);
 		
 		JLabel lgoinPasswordLabel = new JLabel("패쓰워드");
+		lgoinPasswordLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		lgoinPasswordLabel.setBounds(96, 133, 57, 15);
 		memberLoginPanel.add(lgoinPasswordLabel);
 		
@@ -232,6 +237,10 @@ public class MemberMainFrame extends JFrame {
 		});
 		joinBtn.setBounds(215, 192, 97, 23);
 		memberLoginPanel.add(joinBtn);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(0, 32, 46, -27);
+		memberLoginPanel.add(tabbedPane);
 		
 		JPanel memberJoinPanel = new JPanel();
 		memberJoinPanel.setBackground(new Color(192, 192, 192));
