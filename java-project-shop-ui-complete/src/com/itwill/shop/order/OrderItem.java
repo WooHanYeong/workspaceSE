@@ -16,6 +16,7 @@ public class OrderItem {
 	private int o_no;
 	//private int p_no;
 	private Product product;
+	
 	public OrderItem() {
 		// TODO Auto-generated constructor stub
 	}

@@ -12,15 +12,14 @@ public class CartDaoTestMain {
 	public static void main(String[] args) throws Exception {
 		CartDao cartDao=new CartDao();
 		System.out.println("1.add(insert)");
-		Cart addCart=new Cart(0,
-								"guard1",
+		Cart addCart=new Cart(0,"guard1",
 								new Product(8, null, 0, null, null, 0),
 								1);
 		int rowCount=-999;
-		/*
-		rowCount = cartDao.add(addCart);
+		
+		rowCount = cartDao.insert(addCart);
 		System.out.println(">> "+rowCount);
-		*/
+		
 		System.out.println("2.updateByCartNo");
 		rowCount=cartDao.updateByCartNo(8,5);
 		System.out.println(">> "+rowCount);

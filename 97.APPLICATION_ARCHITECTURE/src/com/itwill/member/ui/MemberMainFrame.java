@@ -1,47 +1,40 @@
 package com.itwill.member.ui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import com.itwill.member.Member;
-import com.itwill.member.MemberService;
 import java.awt.BorderLayout;
-import javax.swing.JTabbedPane;
-import java.awt.SystemColor;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Color;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JSeparator;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.Vector;
-import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
-import javax.swing.JList;
-import javax.swing.AbstractListModel;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
+import javax.swing.JSeparator;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.itwill.member.Member;
+import com.itwill.member.MemberService;
 
 public class MemberMainFrame extends JFrame {
 	/*********1.MemberService멤버필드선언*****/
@@ -107,6 +100,14 @@ public class MemberMainFrame extends JFrame {
 		menuBar.add(memberMenu);
 		
 		loginMenuItem = new JMenuItem("로그인");
+		loginMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				/********************/
+				loginDialog loginDialog = new loginDialog();
+				loginDialog.setModal(true);
+				loginDialog.setVisible(true);
+			}
+		});
 		memberMenu.add(loginMenuItem);
 		
 		joinMenuItem = new JMenuItem("가입");
@@ -424,6 +425,11 @@ public class MemberMainFrame extends JFrame {
 		memberInfoPanel.add(memberInMarriedLabel);
 		
 		updateFormBtn = new JButton("수정폼");
+		updateFormBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		updateFormBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/************수정폼 활성화**********/
@@ -435,6 +441,11 @@ public class MemberMainFrame extends JFrame {
 		memberInfoPanel.add(updateFormBtn);
 		
 		updateBtn = new JButton("수정");
+		updateBtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		updateBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/**************** 회원수정 ***************/
@@ -471,6 +482,11 @@ public class MemberMainFrame extends JFrame {
 		memberInfoPanel.add(updateBtn);
 		
 		JButton memberInfoButton = new JButton("회원정보");
+		memberInfoButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		memberInfoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/**************** 로그인한회원정보보기 ***************/
